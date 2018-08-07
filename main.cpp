@@ -2,16 +2,20 @@
 #include <iostream>
 #include <time.h>
 #include <windows.h>
+#include <algorithm>
 #include "Point.h"
+#include "HorizontalLine.h"
+#include "VerticalLine.h"
 using namespace std;
 
 
 int main()
 {
 	
-	Point p1 = { 15,15,'#' };
+	HorizontalLine lh;
+	VerticalLine vl;
 
-	p1.Draw();
-
+	vl.Draw();
+	lh.Darw();
 	return 0;
 }
