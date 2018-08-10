@@ -1,20 +1,15 @@
 #pragma once
-#include <vector>
 #include "Point.h"
+#include "Figure.h"
 
-using namespace std; 
 
-class HorizontalLine
+class HorizontalLine : public Figure
 {
-private:
-	vector<Point> vec;
-
 public:
 	HorizontalLine();
-	explicit HorizontalLine(int xLeft,int xRight, int y, char sym);
+	HorizontalLine(int xLeft,int xRight, int y, char sym);
 
 	~HorizontalLine();
 
-	void Darw();
 };
 

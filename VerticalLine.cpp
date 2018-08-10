@@ -14,10 +14,4 @@ VerticalLine::~VerticalLine()
 {
 }
 
-void VerticalLine::Draw()
-{
-	for (auto i : vec)
-	{
-		i.Draw();
-	}
-}
+

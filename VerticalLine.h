@@ -1,12 +1,11 @@
 #pragma once
 #include <vector>
 #include "Point.h"
+#include "Figure.h"
 
-using namespace std;
-class VerticalLine
+class VerticalLine :public Figure
 {
-private:
-	vector<Point> vec;
+
 public:
 	VerticalLine()
 	{
@@ -15,6 +14,5 @@ public:
 	VerticalLine(int yBottom,int yTop,int x, char sym);
 	~VerticalLine();
 
-	void Draw();
 };
 
