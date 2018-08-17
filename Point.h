@@ -18,6 +18,7 @@ public:
 	void Draw();
 	void Move(int offset, Direction direction);
 	void Clear();
+	bool IsHit(Point _p);
 
 	void SetX(int _x);
 	int GetX();

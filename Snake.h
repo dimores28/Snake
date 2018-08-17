@@ -17,5 +17,11 @@ public:
 
 	void Move();
 	Point GetNextPoint();
+	void SetDirection(Direction _dr);
+	Direction GetDirection();
+	void HandleKay(int _key);
+	bool Eat(Point _food);
+	bool IsHitTail();
+
 };
 

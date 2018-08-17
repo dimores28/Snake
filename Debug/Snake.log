@@ -1,10 +1,5 @@
 ﻿  main.cpp
-  Snake.cpp
-  Point.cpp
+  Walls.cpp
   Создание кода...
-  Пропуск... (изменения не обнаружены)
-  VerticalLine.cpp
-  HorizontalLine.cpp
-  Figure.cpp
   Snake.vcxproj -> E:\project_cpp\Snake\Debug\Snake.exe
   Snake.vcxproj -> E:\project_cpp\Snake\Debug\Snake.pdb (Full PDB)

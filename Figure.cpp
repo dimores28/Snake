@@ -25,3 +25,21 @@ void Figure::Draw()
 		cout << "Debil zadai razmer linii\n";
 	}
 }
+
+bool Figure::IsHit(Figure _figure)
+{
+	for (auto p : vec)
+	{
+		if (_figure.IsHit(p)) return true;
+	}
+	return false;
+}
+
+bool Figure::IsHit(Point _point)
+{
+	for (auto p : vec)
+	{
+		if (_point.IsHit(p)) return true;
+	}
+	return false;
+}

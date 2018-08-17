@@ -13,5 +13,7 @@ public:
 	~Figure();
 
 	void Draw();
+	bool IsHit(Figure _figure);
+	bool IsHit(Point _point);
 };
 

@@ -41,22 +41,12 @@ void Point::Draw()
 
 void Point::Move(int offset,Direction direction)
 {
-	if (direction == RIGHT)
+	switch (direction)
 	{
-		x = x + offset;
-	}
-	else if (direction == LEFT)
-	{
-		x = x - offset;
-	}
-
-	if (direction == UP)
-	{
-		y = y + offset;
-	}
-	else if (direction == DOWN)
-	{
-		y = y - offset;
+	case RIGHT: x += offset; break;
+	case LEFT:  x -= offset; break;
+	case UP:    y -= offset; break;
+	case DOWN:  y += offset; break;
 	}
 }
 
@@ -64,6 +54,11 @@ void Point::Clear()
 {
 	sym = ' ';
 	Draw();
+}
+
+bool Point::IsHit(Point  _p)
+{
+	return _p.x == x && _p.y == y;
 }
 
 void Point::SetX(int _x)
