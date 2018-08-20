@@ -34,6 +34,12 @@ void Point::Draw()
 	position.Y = y;
 	SetConsoleCursorPosition(hConsole, position);		// Перемещение каретки по задан
 
+	HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO info;
+	info.dwSize = 100;
+	info.bVisible = FALSE;
+	SetConsoleCursorInfo(consoleHandle, &info);
+
 	cout << sym;
 
 

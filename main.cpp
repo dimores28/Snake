@@ -3,18 +3,17 @@
 #include <windows.h>
 #include <algorithm>
 #include <conio.h>
-#include "Point.h"
-#include "HorizontalLine.h"
-#include "VerticalLine.h"
 #include "Snake.h"
 #include "FoodCreator.h"
 #include "Walls.h"
+
+void GameOver();
 
 
 int main()
 {
 	
-
+	setlocale(LC_ALL, "Russian");
 	
 	Walls walls = Walls(80, 25);
 	walls.Draw();
@@ -32,7 +31,13 @@ int main()
 	
 	while (true)
 	{
-		if (walls.IsHit(sn) || sn.IsHitTail()) break;
+		if (walls.IsHit(sn) || sn.IsHitTail()) 
+		{
+			GameOver();
+			break;
+		}
+			
+
 		if (sn.Eat(food))
 		{
 		    food = foodCreator.CreateFood();
@@ -52,7 +57,28 @@ int main()
 	}
 
 	
-	
 
 	return 0;
+}
+
+
+void GameOver()
+{
+	//DWORD l;
+	COORD position;
+	position.X = 25;
+	position.Y = 10;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
+	//SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
+	//FillConsoleOutputAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15, 102, position, &l);
+	CONSOLE_CURSOR_INFO cursorInfo;
+
+	cout << "\n====================================\n";
+	cout << "         ÈÃÐÀ ÎÊÎÍ×ÅÍÀ\n";
+	cout << "====================================\n";
+
+	cursorInfo.bVisible = false;
+	cursorInfo.dwSize = 1;
+
+
 }
